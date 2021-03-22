@@ -12,9 +12,6 @@ body, html {
     padding: 0;
 }
 
-html, body {
-    min-width: 400px;
-}
 
 body, input, button {
     font-size: 14px;
@@ -28,7 +25,7 @@ body {
 
 .google-navbar-login {
     height: 36px;
-    width: 118.7px;
+    width: 118.3px;
     background: #1a73e8;
     border: 1px solid transparent;
     border: 0;
@@ -37,7 +34,7 @@ body {
     font-size: 14px;
     letter-spacing: .25px;
     line-height: 16px;
-    margin-left: 10px;
+    margin-left: 6px;
     margin-right: 10px;
     padding: 10px 13px;
     text-align: center;
@@ -54,11 +51,10 @@ body {
 }
 .google-navbar-apps {
     float:right;
-    height: 24;
-    width: 24;
+    padding: 4px;
     background: white;
     border-radius: 50%;
-    margin-left: 11.5px;
+    margin-left: 7.5px;
     margin-right: 10px;
 }
 .google-navbar-texts {
@@ -197,6 +193,20 @@ input[type="image"] {
     margin-right: 8px;
 }
 
+button, .google-button:hover{
+    border: 1px solid #DCDCDC;
+}
+
+button, .google-button:active{
+    border: 1px solid #1a0dab;
+}
+button, .google-button::after {
+    border: none;
+    outline: none;
+}
+    
+}
+
 .link {
     padding: 0 3px;
     color: #1a0dab;
@@ -206,7 +216,7 @@ input[type="image"] {
     position: fixed;
     bottom: 0px;
     width: 100%;
-    height: 12.8%;
+    height: 96px;
     color: #70757a;
     background: #f2f2f2;
     justify-content: space-evenly;
@@ -276,7 +286,7 @@ a:hover {
 text-decoration: none;
 }
 
-@media (max-height: 300px){
+@media (max-height: 350px){
     .footer { 
         display : none; 
         visibility : hidden; 
