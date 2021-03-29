@@ -1,0 +1,383 @@
+* {
+    box-sizing: border-box;
+  }
+
+body .search{
+    overflow-y:scroll;
+    height: 100%;
+
+  }
+body, html {
+    min-height: 100%; 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.results .container {
+    display: none;
+}
+
+
+.results .search{
+    width: 100%;
+    text-justify: inter-character;
+    font-family: sans-serif;
+    
+}
+
+.search-top {
+    display: flex;
+    height: 5.85em;
+    width: 100%;
+    padding-top: 2.35%;
+    padding-left: 1.55%;
+    justify-content: space-between;
+}
+
+.search-searchbar {
+    display: flex;
+    margin-left: 2.9%;
+    height: 100%;
+    width: 60%;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    border-radius: 5em;
+    background: #fff;
+    display: flex;
+    border: 1px solid transparent;
+    margin-top: -0.65%;
+    margin-right: 22.35%;
+}
+
+.search-searchbar-input {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: rgba(0,0,0,.87);
+    word-wrap: break-word;
+    outline: none;
+    display: flex;
+    flex: 100%;
+    height: 34px;
+    font-size: 1.15em;
+    padding-top: 0.55em;
+    padding-right: 9em;
+    padding-left: 1.25em;
+    min-width: 200px
+}
+
+.search-searchbar-icon {
+    margin-right: 1.2em;
+    margin-top: 0.68em;
+}
+
+.search-searchbar-keyboard{
+    display: flex;
+    position: relative;
+    right: 1.4em;
+    top: 1.15em;
+}
+
+.search-top-right {
+    display: flex;
+    align-self: flex-end;
+    width: 30%;
+    position:relative;
+    left: 9.4%;
+    bottom: 24%;
+
+}
+
+.search-top-right-login {
+    height: 36px;
+    width: 118.3px;
+    background: #1a73e8;
+    border: 1px solid transparent;
+    border: 0;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: .25px;
+    line-height: normal;
+    margin-left: 6px;
+    padding: 10px 13px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none; 
+    margin-bottom: 0.2em;
+}
+
+
+
+.search-top-right-apps:hover {
+    background-color:#E8E8E8;
+}
+.search-top-right-apps {
+    position: relative;
+    top: 0.1em;
+    float:right;
+    padding: 4px;
+    background: white;
+    border-radius: 50%;
+    margin-left: 7.5px;
+    margin-right: 10px;
+    
+}
+.search-undertop{
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    width: 128px;
+    justify-content: space-between;
+    line-height: 0.9%;
+    margin-top: 2.1em;
+    margin-left: 13em;
+    color: #5f6368;
+  }
+
+  .search-filter {
+    display: flex;
+    width: 100%;
+    padding-right: 1.70em;
+    font-size: 1em;
+    text-decoration: none;
+  }
+  .search-filter:hover{
+    text-decoration: none;
+}
+  .search-filter:active{
+      color: blue;
+      text-decoration: none;
+  }
+
+.search-undertop-icon{
+    height: 1.15em;
+    width: 1.15em;
+    margin-right: 0.42em;
+    position: relative;
+    bottom: 0.6em;
+    fill: #5f6368;
+    
+  }
+
+  hr {
+    display: block;
+    height: 0px;
+    border: 0;
+    border-top: 1px solid 	#E8E8E8;
+    position: relative;
+    bottom: 1px;
+}
+.search-results {
+    margin-left: 13em;
+
+}
+.search-results-number {
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 8px;
+    margin-top: 0.8em;
+    font-size: 14px;
+    color: #70757a;
+}
+.search-results-result {
+    margin-top: 1.3em;
+    line-height: 1.6em;
+    width: 42em;
+    margin-bottom: 2em;
+
+}
+.desc {
+    color: #4d5156;
+}
+.path{
+    text-decoration: none;
+    font-family: arial,sans-serif;
+}
+
+.path:hover {
+    text-decoration: none;
+}
+.missing {
+    text-decoration: none;
+    color: #1a0dab;
+    
+}
+.title {
+    color: #1a0dab;
+    font-size: 20px;
+    text-decoration: none;;
+    line-height: 1.6em;
+}
+.title:hover {
+    text-decoration: underline;
+}
+.arrow {
+    padding-top: 0.3em;
+    height: 20px;
+    width: 16px;
+    float: right;
+
+}
+
+.arrow-show-more {
+    padding-top: 0.3em;
+    height: 20px;
+    width: 16px;
+}
+
+.result-list {
+    position: relative;
+    top: 1em;
+    padding-bottom: 1em;
+  
+}
+.list-item {
+    border-top: 1px solid #E8E8E8;
+    border-bottom: 1px solid #E8E8E8;
+    line-height: 2.5em;
+    color: #4d5156;
+
+}
+.search-results-similar-list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 47%;
+    justify-content: space-between;
+    margin-bottom: 2em;
+    
+}
+.search-results-similar-list-box{
+    background: #E8E8E8;
+    border-radius: 2em;
+    height: 4em;
+    width: 49%;
+    padding: 1em;
+    padding-top: 0.5em;
+    padding-left: 2em;
+    padding-right: 4em;
+    vertical-align:middle;
+    margin-bottom: 0.5em;
+    text-decoration: none;
+    min-width: 20em;
+}
+
+.search-results-similar-list-box-icon {
+    color: #4d5156;
+    position: relative;
+    top:0.5em;
+}
+.suggestion {
+    display:table-cell;   
+    position: relative;
+    bottom: 1.0em;
+    right: -2em;
+    font-weight:bold;
+    font-size: 16px;
+    text-decoration: none;
+    min-width: 15em;
+}
+
+.pages {
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+    margin-left: 10%;
+}
+.color-blue {
+    color: dodgerblue;
+    font-size: 40px;
+
+}
+.color-red {
+    color: #F62217;
+    font-size: 2.5em;
+}
+.color-green {
+    color: green;
+    font-size: 2.5em;
+}
+.color-yellow {
+    color: #fcc200;
+    font-size: 2.5em;
+}
+
+
+.pages2 {
+    display: flex;
+    position: relative;
+    top: -1.5em;
+    width: 22em;
+    justify-content: space-between;
+    margin-left: 12.5%;
+    
+}
+.page-number {
+    color: dodgerblue;
+    text-decoration: none;
+}
+.page-number:hover {
+    text-decoration:underline;
+}
+
+footer {
+    background: #E8E8E8
+}
+.first-row {
+    display: flex;
+    margin-right: 12em;
+    margin-left: 12em;
+    height: 4%;
+    
+
+}
+.second-row {
+ 
+    display: flex;
+    margin-right: 30%;
+    margin-left: 12em;
+    padding-bottom: 1em;
+    height: 4%m;
+
+}
+.row-item {
+    padding-left: 1.5em;
+    position: relative;
+    padding-top: 0.2em;
+    color: #70757a;
+    text-decoration: none;
+}
+
+.row-item:hover {
+    text-decoration: none;
+}
+
+
+
+#wiecej {
+    margin-right: -0.1em;
+}
+#bottom-line {
+
+    display: block;
+    height: 0px;
+    border: 0;
+    border-top: 1px solid lightgray;
+}
+#country {
+    padding-right: 1em;
+    border-right: 1px solid lightgray;
+    padding-top: 0.2em;
+}
+#localization{
+    min-width: 50em;
+}
