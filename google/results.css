@@ -85,6 +85,7 @@ body, html {
     position:relative;
     left: 9.4%;
     bottom: 24%;
+    z-index: ;
 
 }
 
@@ -379,3 +380,30 @@ footer {
 #localization{
     min-width: 50em;
 }
+
+ul { padding-left:30px; list-style-image: url('lupa.png'); }
+li { margin-bottom:10px; }
+li:before {    
+    height: 1px;
+    width: 1px;
+    font-family: 'FontAwesome';
+    margin:0 5px 0 -15px;
+}
+.li::marker {
+    font-size: 1px; /* You can use px, but I think rem is more respecful */
+}
+
+#podpowiedzi {
+    position: relative;
+    margin-left: 10.5%;
+    margin-top: -3%;
+    padding-top: 3%;
+    width: 45%;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    background: #fff;
+    border: 1px solid transparent;
+    z-index: -1;
+    line-height: 1em;
+    border-radius: 2em;
+}
+
