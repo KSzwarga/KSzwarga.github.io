@@ -6,13 +6,12 @@
       <link rel="stylesheet"  type="text/css" href ="results.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-      <script src="cities.js"></script>
       <STYLE>
       </STYLE>
     </HEAD>
     <body>
 
-    <div id="app" :class="googleSearch.length == 0 ? 'home' : 'results'">
+    <div id="app"  :class="results.length > 0 ? 'results' : 'home'">
         
         <div id = "homepage">
             <div class ="google-navbar">
@@ -28,13 +27,18 @@
             <div class = "google-middle">
                 <div class = "google-searchbar">
                     <svg class = "google-search-icon" xmlns="http://www.w3.org/2000/svg" fill = #9aa0a6 height="23" viewBox="0 0 24 24" width="23"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                    <input class ="google-text-input" type="text" v-model="googleSearch"/>
+                    <input class ="google-text-input" type="search" v-model="googleSearch"/>
                     <input type="image" class ="google-keyboard-icon" style="margin: auto;background-color: hsl(0, 0%, 100%);transition: background-color 300ms;" src="http://www.gstatic.com/inputtools/images/tia.png"/>
+                </div>
+            <ul v-if="googleSearch.length > 0" id = "podpowiedzi_1">
+                <li v-for="city in filteredCities" v-on:click="autocomplete(city)">
+                    <div v-html="Bold(city.name)"></div>
+                </li>
+            </ul>
             </div>
             <div class="google-buttons">
-                    <button class = "google-button">Szukaj w Google</p>
-                    <button class = "google-button">Szczęśliwy traf</p>
-            </div>
+                <button class = "google-button">Szukaj w Google</p>
+                <button class = "google-button">Szczęśliwy traf</p>
             </div>
             
             <div class ="footer">
@@ -69,7 +73,7 @@
             <div class = "search-top">
                 <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" height="30" width="92" data-atf="1">
                 <div class = "search-searchbar">
-                    <input class ="search-searchbar-input" type="text" v-model="googleSearch">
+                    <input class ="search-searchbar-input" type="search" v-model="googleSearch">
                     <a href="" class="button"><img  class = "search-searchbar-keyboard" type="image"   src="http://www.gstatic.com/inputtools/images/tia.png"></a>
                     <a href="" class="button"><svg class = "search-searchbar-icon" xmlns="http://www.w3.org/2000/svg" fill = #4285f4 height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></a>
                 </div>
@@ -78,11 +82,7 @@
                     <a class ="search-top-right-login"  id="smallLinkButton" href="">Zaloguj się</a>
                 </div>
             </div>
-            <ul id = "podpowiedzi">
-                <li v-for="city in filteredCities">
-                    {{ city.name }}
-                </li>
-            </ul>
+
             <div class ="search-undertop">
                 <a class="search-filter" href="">
                 <svg class ="search-undertop-icon" focusable="false" viewBox="0 0 24 24"><path fill="#34a853" d="M10 2v2a6 6 0 0 1 6 6h2a8 8 0 0 0-8-8"></path>
@@ -277,30 +277,8 @@
                 </div>
             </footer>
         </div>
-
-    <script>
-            var app = new Vue({
-                el: '#app',
-                data: {
-                    googleSearch: "",
-                    cities: window.cities,
-                },
-
-                computed: {
-                    filteredCities() {
-                        let filteredCities = this.cities.filter(city => city.name.toLowerCase().includes(this.googleSearch));
-                        return filteredCities.slice(0,10);
-                    }
-                },
-                
-                updated() {
-                    this.$nextTick(() => {
-                        this.$refs.inputFocus.focus();
-                    });
-                }
-            });
-    </script>
-
-</div>
+    </div>
+    <script src="cities.js" defer></script>
+    <script src="vue.js" defer></script>
 </BODY>
 </HTML>
