@@ -24,11 +24,16 @@
 },
 
         computed: {
-            filteredCities() {
-                let filteredCities = this.cities.filter(city => city.name.toLowerCase().includes(this.googleSearch));
-                return filteredCities.slice(0,10);
-            }
-        },
+            filteredCities: function () {
+                let filtered = this.cities.filter(city => city.name.includes(this.googleSearch))
+        
+                if (filtered.length > 10) {
+                    filtered = filtered.slice(0, 10)
+                }
+                return filtered
+              }
+            },
+        
 
         methods: {
             autocomplete(city) {
@@ -38,13 +43,9 @@
 
             Bold: function(x)
             {
-                input = this.googleSearch;
-                var temp = x.split(input);
-                for(i = 0; i < temp.length; i++)
-                {
-                    x = x.replace(temp[i], temp[i].bold());
-                }
-                return x;
+                
+                return x.replaceAll(this.googleSearch, '<span class="light">' + this.googleSearch + '</span>')
+                  
             },
         },
   

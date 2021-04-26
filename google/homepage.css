@@ -323,8 +323,12 @@ text-decoration: none;
     border-radius: 2em;
     z-index: 1;
     margin-bottom: 10%;
+    font-weight: bold;
 }
 
 .city{
     display: inline-block;
 }
+.light {
+    font-weight: lighter;
+  }
