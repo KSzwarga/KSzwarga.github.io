@@ -332,3 +332,7 @@ text-decoration: none;
 .light {
     font-weight: lighter;
   }
+.chosen
+  {
+      background-color: lightgray;
+  }

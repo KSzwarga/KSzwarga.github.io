@@ -6,6 +6,10 @@
             cities: window.cities,
             fraza: "",
             results: "",
+            current: -1,
+            update_filteredCities:true,
+            focused: false,
+            change: false,
         },
         updated() {
             this.$nextTick(() => {
@@ -19,34 +23,91 @@
 
                 }
 
-    });
+        })},
+    
 
-},
+        watch: {
 
-        computed: {
-            filteredCities: function () {
-                let filtered = this.cities.filter(city => city.name.includes(this.googleSearch))
-        
-                if (filtered.length > 10) {
-                    filtered = filtered.slice(0, 10)
-                }
-                return filtered
-              }
+            current : function() {
+            this.update_filteredCities=false;
+            this.googleSearch = this.filteredCities[this.current].name;
             },
-        
+            googleSearch: function(){
+                this.FilteredCities(this.update_filteredCities);
+                this.update_filteredCities=true;
+                console.log(this.filteredCities);
 
+                if(this.current==-1){
+                    this.searchedInput=this.googleSearch;
+                    
+                }
+            }
+
+        },
+            
+        
         methods: {
             autocomplete(city) {
                 this.googleSearch = city.name;
                 this.results = this.googleSearch;
             },
-
+            enter() {
+                this.update_filteredCities=true;
+                this.change= true;
+                this.current=-1;
+             },
             Bold: function(x)
             {
                 
                 return x.replaceAll(this.googleSearch, '<span class="light">' + this.googleSearch + '</span>')
                   
             },
-        },
-  
+        
+            down: function() {
+                if (this.current < this.filteredCities.length)
+                {
+                    this.current++;
+                } else if (this.current == this.filteredCities.length)
+                {
+                    this.current = 0;
+                }
+            },
+
+            up: function() {
+                if(this.current > 0)
+                {
+                    this.current--;
+                } else if (this.current < 0)
+                {
+                    this.current = this.filteredCities.length - 1;
+                }
+            },
+            currentCity: function() {
+                this.googleResults = true;
+            },
+
+            FilteredCities(yes){
+                if(yes){
+                   let result=this.cities.filter(city => city.name.includes(this.googleSearch));
+                   if(result.length>10){
+                       this.filteredCities= result.slice(1, 11);
+                   }
+                   else{
+                       this.filteredCities= result;
+                   }
+                   this.current=-1;
+                }   
+            },
+            selected(i){
+                this.googleSearch=this.filteredCities[i].name;
+                this.enter();
+             },
+             Results(){
+                if(this.googleSearch.length==0){
+                    this.change=false;
+                }
+                return this.change;
+
+             }
+    }
     });

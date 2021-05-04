@@ -406,4 +406,17 @@ li:before {
     line-height: 1em;
     border-radius: 2em;
 }
+.city{
+    display: inline-block;
+}
+.light {
+    font-weight: lighter;
+  }
+.chosen
+  {
+      background-color: lightgray;
+  }
 
+  #podpowiedzi_3 {
+    display: none;
+}
