@@ -1,0 +1,52 @@
+#podpowiedzi_2 {
+    position: relative;
+    margin-left: 10.5%;
+    margin-top: -3.83%;
+    padding-top: 3%;
+    width: 45%;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    background: #fff;
+    border: 1px solid transparent;
+    line-height: 1em;
+    border-radius: 2em;
+}
+.city{
+    display: inline-block;
+}
+.light {
+    font-weight: lighter;
+  }
+.chosen
+  {
+      background-color: lightgray;
+  }
+
+#podpowiedzi_3 {
+    display: none;
+}
+#podpowiedzi_1 {
+    position: relative;
+    margin-left: 30.5%;
+    margin-top: -3.2%;
+    padding-top: 3%;
+    width: 39%;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    background: #fff;
+    border: 1px solid transparent;
+    line-height: 1em;
+    border-radius: 2em;
+    z-index: 1;
+    margin-bottom: 10%;
+    font-weight: bold;
+}
+
+.city{
+    display: inline-block;
+}
+.light {
+    font-weight: lighter;
+  }
+.chosen
+  {
+      background-color: lightgray;
+  }
