@@ -33,3 +33,15 @@
   padding-left: 10px;
   width: 480px;
 }
+
+ul { padding-left:30px; list-style-image: url('lupa.png'); }
+li { margin-bottom:10px; }
+li:before {    
+    height: 1px;
+    width: 1px;
+    font-family: 'FontAwesome';
+    margin:0 5px 0 -15px;
+}
+.li::marker {
+    font-size: 1px; 
+}

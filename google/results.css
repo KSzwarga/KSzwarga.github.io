@@ -379,17 +379,7 @@ footer {
     min-width: 50em;
 }
 
-ul { padding-left:30px; list-style-image: url('lupa.png'); }
-li { margin-bottom:10px; }
-li:before {    
-    height: 1px;
-    width: 1px;
-    font-family: 'FontAwesome';
-    margin:0 5px 0 -15px;
-}
-.li::marker {
-    font-size: 1px; /* You can use px, but I think rem is more respecful */
-}
+
 
 #podpowiedzi_2 {
     position: relative;
