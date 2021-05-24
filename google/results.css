@@ -33,22 +33,23 @@ body, html {
     padding-top: 2.35%;
     padding-left: 1.55%;
     justify-content: space-between;
-    
 }
-
+.search-google {
+    position: relative;
+    top: 4%;
+    left: 4%;
+}
 .search-searchbar {
     position: absolute;
     display: flex;
     max-height: 480px;
-    min-width: 300px;
     width: 685px;
     box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
     background: #fff;
     border: 1px solid transparent;
     margin-top: -0.65%;
-    margin-right: 22.35%;
     z-index: 4;
-    right:22%;
+    left:160px;
     border-radius: 24px; 
 }
 
@@ -59,29 +60,28 @@ body, html {
 
 .search-searchbar-icon {
     position: relative;
-    left: 4%;
-    z-index: 6;
+    top:10px;
+    right:10px ;
 
 }
 
 .search-searchbar-keyboard{
     position: relative;
-    left: 23%;
+    top:10px;
     margin-top: 4px;
     z-index: 6;
     padding: 2px;
     width: 24px;
     height: 16px;
+    right:20px ;
 
 }
 
 .search-top-right {
     display: flex;
-    align-self: flex-end;
     width: 30%;
     position:relative;
-    left: 16%;
-    bottom: 24%;
+    right: -16.5%;
     z-index: 2;
 
 }
