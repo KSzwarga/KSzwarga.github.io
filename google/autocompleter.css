@@ -34,14 +34,13 @@
   width: 480px;
 }
 
-ul { padding-left:30px; list-style-image: url('lupa.png'); }
-li { margin-bottom:10px; }
-li:before {    
+.list ul { padding-left:30px; list-style-image: url('lupa.png'); }
+.list li { margin-bottom:10px; }
+.list li:before {    
     height: 1px;
     width: 1px;
-    font-family: 'FontAwesome';
     margin:0 5px 0 -15px;
 }
-.li::marker {
+.list .li::marker {
     font-size: 1px; 
 }

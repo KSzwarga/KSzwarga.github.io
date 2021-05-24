@@ -5,7 +5,7 @@ Vue.component('v-autocompleter', {
     <input class="google-text-input" :value="value" @input="$emit('input', $event.target.value)" type="search"
         v-on:click="ustaw()" ref="first" @focus="chosen=true" @keyup.down="down()" @keyup.up="up()"
         @keyup.enter="enter()" />
-    <div>
+    <div class = "list">
         <ul
             :class="[value.length !== 0 && chosen && filteredCities.length !== 0 ? '' : 'nothing']">
             <li :class="{current: current === index}" v-for="(city, index) in filteredCities"
