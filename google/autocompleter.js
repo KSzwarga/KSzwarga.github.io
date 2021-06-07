@@ -1,28 +1,25 @@
 Vue.component('v-autocompleter', {
-  template: `                   
-  <div>
-    <input class="google-text-input" :value="value" @input="$emit('input', $event.target.value)" type="search"
-         ref="first" @focus="chosen=true" @keyup.down="down()" @keyup.up="up()"
-        @keyup.enter="enter()" />
-    <div class = "list">
-        <ul
-            :class="[value.length !== 0 && chosen && filteredCities.length !== 0 ? '' : 'nothing']">
-            <li :class="{current: current === index}" v-for="(city, index) in filteredCities"
-                v-on:click="mouseClick(city.name)">
-                <div class="city" v-html="notBold(city.name)"></div>
-            </li>
-        </ul>
-    </div>
-  </div>               
+  template: `  
+<div class="autocompleter">
+  <input class="google-text-input" :value="value" @input="$emit('input', $event.target.value)" type="search"
+      ref="first" @focus="chosen=true" @keyup.down="down()" @keyup.up="up()" @keyup.enter="enter()" />
+  <div class="list">
+      <ul :class="[value.length !== 0 && chosen && filteredCities.length !== 0 ? '' : 'nothing']">
+          <li :class="{current: current === index}" v-for="(city, index) in filteredCities"
+              v-on:click="mouseClick(city.name)">
+              <div class="city" v-html="notBold(city.name)"></div>
+          </li>
+      </ul>
+  </div>
+</div>
     `,
-  props: ['options', 'value'],
+  props: ['value'],
 
   data: function () {
     return {
-      cities: window.cities,
       filteredCities: "",
       update_filteredCities: true,
-      chosen: false,
+      chosen: true,
       current: -1,
       searchedInput: ''
     }
@@ -103,18 +100,21 @@ Vue.component('v-autocompleter', {
       }
     },
     /*
-     * zwraca listę (max 10) miast zawierąjacych frazę
+     * zwraca listę (max 10) miast zawierających frazę
      */
-    FilteredCities: function (bool) {
+    FilteredCities: Cowboy.debounce(100, function (bool) {
       if (bool) {
-        let result = this.cities.filter(city => city.name.includes(this.value));
-        if (result.length > 10) {
-          this.filteredCities = result.slice(1, 11);
-        } else {
-          this.filteredCities = result;
-        }
-        this.current = -1;
+        fetch(`http://localhost:8080/search?name=${this.value}`)
+          .then(response => response.json())
+          .then(data => {
+            if (data.length > 10) {
+              this.filteredCities = data.slice(1, 11);
+            } else {
+              this.filteredCities = data;
+            }
+            this.current = -1;
+          });
       }
-    }
+    })
   }
-});
+})

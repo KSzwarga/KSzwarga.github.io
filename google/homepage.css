@@ -1,20 +1,52 @@
 * {
 
 
-    box-sizing: border-box; 
-  }
+    box-sizing: border-box;
+}
+
+.home .searchbar {
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: -120px;
+    width: auto;
+    min-height: 44px;
+    max-height: 500px;
+    width: 585px;
+    border: 1px solid lightgray;
+    border-radius: 24px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.home .search-searchbar-keyboard {
+    position: relative;
+    right: -25px;
+
+}
+
+.home .search-searchbar-icon {
+    display: none;
+}
+
+.home .home-searchbar-icon {
+    position: relative;
+    left: -520px;
+    bottom: -12px;
+}
 
 
-body, html {
-    min-height: 100%; 
+body,
+html {
+    min-height: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-.home #search
-{
+.home #search {
     display: none;
 }
 
@@ -23,9 +55,11 @@ body, html {
     overflow: hidden;
 }
 
-body, input, button {
+body,
+input,
+button {
     font-size: 14px;
-    font-family: arial,sans-serif;
+    font-family: arial, sans-serif;
     color: #222;
 }
 
@@ -51,30 +85,32 @@ body {
     vertical-align: middle;
     border-radius: 4px;
     color: white;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 
 
 .google-navbar-apps:hover {
-    background-color:#E8E8E8;
+    background-color: #E8E8E8;
 }
+
 .google-navbar-apps {
-    float:right;
+    float: right;
     padding: 4px;
     background: white;
     border-radius: 50%;
     margin-left: 7.5px;
     margin-right: 10px;
 }
+
 .google-navbar-texts {
-    color:rgba(34, 20, 20, 0.87);
+    color: rgba(34, 20, 20, 0.87);
     line-height: 24px;
     text-decoration: none;
     font-size: 13px;
-    font-family: arial,sans-serif;
+    font-family: arial, sans-serif;
     padding-right: 15px;
-}  
+}
 
 .google-navbar {
     align-items: center;
@@ -86,6 +122,7 @@ body {
     margin-top: 4px;
 
 }
+
 .google-content {
     display: flex;
     flex-direction: column;
@@ -110,6 +147,7 @@ body {
     bottom: -4px;
 
 }
+
 .google-middle {
     max-height: 400px;
     padding: 20px;
@@ -132,9 +170,10 @@ body {
     max-width: 582px;
     flex: 1;
     display: flex;
-    
-    
+
+
 }
+
 .google-search-icon {
     display: flex;
     align-items: center;
@@ -146,7 +185,7 @@ body {
     left: -1px;
     z-index: 2;
 
-    
+
 }
 
 
@@ -155,13 +194,14 @@ body {
 
 .google-keyboard-icon {
     vertical-align: middle;
-    position:relative;
+    position: relative;
     right: -100%;
     top: 15px;
     padding: 2px;
     text-decoration: none;
     z-index: 2;
 }
+
 input[type="image"] {
     outline: none;
     z-index: 2;
@@ -171,9 +211,8 @@ input[type="image"] {
     position: relative;
     display: flex;
     justify-content: center;
-    bottom: 38px;
     margin-top: 2.5%;
-    
+
 }
 
 .google-button {
@@ -181,7 +220,7 @@ input[type="image"] {
     border: 1px solid #f8f9fa;
     border-radius: 4px;
     color: #3c4043;
-    font-family: arial,sans-serif;
+    font-family: arial, sans-serif;
     font-size: 14px;
     margin: 11px 4px;
     line-height: 27px;
@@ -195,21 +234,26 @@ input[type="image"] {
     padding-left: 16px;
     padding-right: 16px;
     margin-right: 8px;
-    z-index:-1 ;
+    margin-top: 4%;
+    z-index: -2;
 }
 
-button, .google-button:hover{
+button,
+.google-button:hover {
     border: 1px solid #DCDCDC;
 }
 
-button, .google-button:active{
+button,
+.google-button:active {
     border: 1px solid #1a0dab;
 }
-button, .google-button::after {
+
+button,
+.google-button::after {
     border: none;
     outline: none;
 }
-    
+
 
 
 .link {
@@ -217,6 +261,7 @@ button, .google-button::after {
     color: #1a0dab;
     text-decoration: none;
 }
+
 .footer {
     position: fixed;
     bottom: 0px;
@@ -232,9 +277,10 @@ button, .google-button::after {
     width: 100%;
     border-bottom: 1px solid #dadce0;
     font-size: 15px;
-    color: rgba(0,0,0,.54);
+    color: rgba(0, 0, 0, .54);
     padding: 0 15px;
 }
+
 .footer-row2 {
     height: 50%;
     width: 100%;
@@ -258,10 +304,11 @@ button, .google-button::after {
     left: -4.9%;
 
 }
+
 .leaf {
     position: relative;
     bottom: -15px;
-    right:-9px;
+    right: -9px;
 }
 
 .footer-row23 {
@@ -278,23 +325,26 @@ button, .google-button::after {
     text-decoration: none;
 }
 
-a, footer-link:visited {
-    color:inherit;
+a,
+footer-link:visited {
+    color: inherit;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-#smallLinkButton:hover,active,visited{
+#smallLinkButton:hover,
+active,
+visited {
 
-text-decoration: none;
+    text-decoration: none;
 }
 
-@media (max-height: 350px){
-    .footer { 
-        display : none; 
-        visibility : hidden; 
+@media (max-height: 350px) {
+    .footer {
+        display: none;
+        visibility: hidden;
     }
 }
 
@@ -314,13 +364,14 @@ text-decoration: none;
     font-weight: bold;
 }
 
-.city{
+.city {
     display: inline-block;
 }
+
 .light {
     font-weight: lighter;
-  }
-.chosen
-  {
-      background-color: lightgray;
-  }
+}
+
+.chosen {
+    background-color: lightgray;
+}
