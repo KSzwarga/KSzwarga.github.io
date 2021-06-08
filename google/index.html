@@ -8,15 +8,11 @@
     <link rel="stylesheet" type="text/css" href="autocompleter.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"
-        integrity="sha512-JZSo0h5TONFYmyLMqp8k4oPhuo6yNk9mHM+FY50aBjpypfofqtEWsAgRDQm94ImLCzSaHeqNvYuD9382CEn2zw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="autocompleter-php.js"></script>
+    <script src="cities.js"></script>
+    <script src="autocompleter-html.js"></script>
     <STYLE>
     </STYLE>
 </HEAD>
-
-
 <body>
     <div id="app" :class="[results == 1 ? 'results' : 'home']">
 
@@ -74,7 +70,7 @@
         </div>
         <div class="position-searchbar">
             <div class="searchbar">
-                <v-autocompleter v-model="googleSearch" @enter="ShowResults"></v-autocompleter>
+                <v-autocompleter v-model="googleSearch" :options="cities" @enter="ShowResults"></v-autocompleter>
                 <img class="search-searchbar-keyboard" type="image"
                     src="http://www.gstatic.com/inputtools/images/tia.png" />
                 <svg class="search-searchbar-icon" xmlns="http://www.w3.org/2000/svg" fill=#4285f4 height="24"
@@ -419,6 +415,7 @@
     var app = new Vue({
         el: '#app',
         data: {
+            cities: window.cities,
             results: 0,
             googleSearch: '',
             Values: [],
